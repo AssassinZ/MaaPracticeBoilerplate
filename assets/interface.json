@@ -62,7 +62,10 @@
         {
             "name": "刷技能",
             "entry": "开始",
-            "default_check": true
+            "default_check": true,
+            "option": [
+                "计时器时间"
+            ]
         },
         {
             "name": "TEST",
