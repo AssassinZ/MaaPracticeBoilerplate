@@ -6,8 +6,8 @@
       "lastSyncTime": 1771640657228,
       "isDeleted": true,
       "savedViewport": {
-        "x": -677,
-        "y": 155,
+        "x": -214,
+        "y": -59,
         "zoom": 0.78
       },
       "filename": "HBR_skill_4-2",
@@ -83,7 +83,7 @@
     },
     "next": [
       "起点",
-      "终点",
+      "[JumpBack]终点",
       "[JumpBack]掉线",
       "跳过",
       "计时器"
@@ -108,8 +108,10 @@
       }
     },
     "action": {
-      "type": "Click",
-      "param": {}
+      "type": "LongPress",
+      "param": {
+        "duration": 100
+      }
     },
     "$__mpe_code": {
       "position": {
@@ -141,8 +143,10 @@
       }
     },
     "action": {
-      "type": "Click",
-      "param": {}
+      "type": "LongPress",
+      "param": {
+        "duration": 100
+      }
     },
     "$__mpe_code": {
       "position": {
@@ -151,7 +155,7 @@
       }
     },
     "next": [
-      "[JumpBack]终点出现地图"
+      "终点出现地图"
     ]
   },
   "终点出现地图": {
@@ -237,8 +241,16 @@
       }
     },
     "action": {
-      "type": "Click",
-      "param": {}
+      "type": "LongPress",
+      "param": {
+        "target_offset": [
+          50,
+          0,
+          0,
+          0
+        ],
+        "duration": 100
+      }
     },
     "$__mpe_code": {
       "position": {
@@ -264,8 +276,10 @@
       }
     },
     "action": {
-      "type": "Click",
-      "param": {}
+      "type": "LongPress",
+      "param": {
+        "duration": 100
+      }
     },
     "$__mpe_code": {
       "position": {
@@ -321,8 +335,10 @@
       }
     },
     "action": {
-      "type": "Click",
-      "param": {}
+      "type": "LongPress",
+      "param": {
+        "duration": 100
+      }
     },
     "$__mpe_code": {
       "position": {
@@ -351,8 +367,10 @@
       }
     },
     "action": {
-      "type": "Click",
-      "param": {}
+      "type": "LongPress",
+      "param": {
+        "duration": 100
+      }
     },
     "$__mpe_code": {
       "position": {
