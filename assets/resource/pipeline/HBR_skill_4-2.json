@@ -6,9 +6,9 @@
       "lastSyncTime": 1771640657228,
       "isDeleted": true,
       "savedViewport": {
-        "x": -874,
-        "y": 242,
-        "zoom": 0.85
+        "x": -677,
+        "y": 155,
+        "zoom": 0.78
       },
       "filename": "HBR_skill_4-2",
       "version": "v1.1.4"
@@ -251,7 +251,6 @@
     ]
   },
   "终点地图OK": {
-    "post_wait_freezes": 500,
     "recognition": {
       "type": "OCR",
       "param": {
@@ -366,17 +365,21 @@
     ]
   },
   "终点完成校验": {
+    "focus": {
+      "Node.Action.Succeeded": "终点操作结束"
+    },
+    "inverse": true,
     "recognition": {
       "type": "OCR",
       "param": {
         "expected": [
-          "AUTO ON"
+          "OK"
         ],
         "roi": [
-          1043,
-          210,
-          127,
-          49
+          724,
+          515,
+          153,
+          72
         ]
       }
     },
