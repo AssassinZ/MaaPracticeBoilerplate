@@ -2,77 +2,16 @@
   "$__mpe_config_HBR_skill_4-2": {
     "$__mpe_code": {
       "prefix": "",
-      "filePath": "D:\\dev\\MaaPracticeBoilerplate\\assets\\resource\\pipeline\\HBR_skill_4-2.json",
-      "lastSyncTime": 1771640657228,
-      "isDeleted": true,
+      "filePath": "C:\\Users\\zz298\\Documents\\MaaPipeline\\HBR_skill_4-2.json",
+      "lastSyncTime": 1771832633885,
       "savedViewport": {
-        "x": -214,
-        "y": -59,
-        "zoom": 0.78
+        "x": -1051,
+        "y": -550,
+        "zoom": 1.32
       },
       "filename": "HBR_skill_4-2",
       "version": "v1.1.4"
     }
-  },
-  "$__mpe_group_主循环_HBR_skill_4-2": {
-    "$__mpe_code": {
-      "position": {
-        "x": 585,
-        "y": -90
-      },
-      "color": "orange",
-      "childrenLabels": [
-        "起点",
-        "终点",
-        "掉线",
-        "跳过"
-      ],
-      "width": 400,
-      "height": 300
-    }
-  },
-  "$__mpe_group_终点操作_HBR_skill_4-2": {
-    "$__mpe_code": {
-      "position": {
-        "x": 1037,
-        "y": -34
-      },
-      "color": "blue",
-      "childrenLabels": [
-        "终点出现地图",
-        "终点地图移动",
-        "终点地图点击",
-        "终点地图OK",
-        "终点完成校验"
-      ],
-      "width": 400,
-      "height": 300
-    }
-  },
-  "掉线403": {
-    "recognition": {
-      "type": "OCR",
-      "param": {
-        "expected": [
-          "$403"
-        ],
-        "roi": [
-          520,
-          302,
-          235,
-          62
-        ]
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1700,
-        "y": 460
-      }
-    },
-    "next": [
-      "掉线403停止"
-    ]
   },
   "开始": {
     "$__mpe_code": {
@@ -89,9 +28,129 @@
       "计时器"
     ]
   },
-  "起点": {
+  "掉线": {
     "focus": {
-      "Node.Action.Succeeded": "O神，启动！"
+      "Node.Action.Succeeded": "扑街！！！"
+    },
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "D36",
+          "D16"
+        ],
+        "roi": [
+          672,
+          340,
+          66,
+          45
+        ]
+      }
+    },
+    "$__mpe_code": {
+      "position": {
+        "x": 667,
+        "y": 512
+      }
+    },
+    "next": [
+      "掉线OK"
+    ]
+  },
+  "掉线403": {
+    "focus": {
+      "Node.Recognition.Succeeded": "403已停止！"
+    },
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "403"
+        ],
+        "roi": [
+          520,
+          302,
+          235,
+          62
+        ],
+        "replace": [
+          [
+            "408",
+            "403"
+          ]
+        ]
+      }
+    },
+    "action": {
+      "type": "StopTask",
+      "param": {}
+    },
+    "$__mpe_code": {
+      "position": {
+        "x": 1621,
+        "y": 427
+      }
+    }
+  },
+  "掉线OK": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "OK"
+        ],
+        "roi": [
+          582,
+          520,
+          114,
+          59
+        ]
+      }
+    },
+    "action": {
+      "type": "LongPress",
+      "param": {
+        "duration": 100
+      }
+    },
+    "$__mpe_code": {
+      "position": {
+        "x": 1001,
+        "y": 618
+      }
+    },
+    "next": [
+      "掉线重载计时器"
+    ]
+  },
+  "掉线猛击": {
+    "focus": {
+      "Node.Action.Succeeded": "无限猛击"
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": [
+          582,
+          520,
+          114,
+          59
+        ]
+      }
+    },
+    "$__mpe_code": {
+      "position": {
+        "x": 1616,
+        "y": 904
+      }
+    },
+    "next": [
+      "掉线重载计时器"
+    ]
+  },
+  "掉线结束": {
+    "focus": {
+      "Node.Action.Succeeded": "已重新连接"
     },
     "recognition": {
       "type": "OCR",
@@ -107,20 +166,25 @@
         ]
       }
     },
-    "action": {
-      "type": "LongPress",
-      "param": {
-        "duration": 100
-      }
-    },
     "$__mpe_code": {
       "position": {
-        "x": 86,
-        "y": 50
+        "x": 1622,
+        "y": 651
+      }
+    }
+  },
+  "掉线重载计时器": {
+    "post_delay": 5000,
+    "$__mpe_code": {
+      "position": {
+        "x": 1309,
+        "y": 653
       }
     },
     "next": [
-      "计时器"
+      "掉线403",
+      "掉线结束",
+      "掉线猛击"
     ]
   },
   "终点": {
@@ -150,8 +214,8 @@
     },
     "$__mpe_code": {
       "position": {
-        "x": 84,
-        "y": 313
+        "x": 669,
+        "y": 223
       }
     },
     "next": [
@@ -163,13 +227,13 @@
     "recognition": {
       "type": "TemplateMatch",
       "param": {
-        "template": "END_map.png",
         "roi": [
           958,
           21,
           288,
           135
-        ]
+        ],
+        "template": "END_map.png"
       }
     },
     "action": {
@@ -178,88 +242,12 @@
     },
     "$__mpe_code": {
       "position": {
-        "x": 41,
-        "y": 92
+        "x": 1078,
+        "y": 58
       }
     },
     "next": [
       "[JumpBack]终点地图移动"
-    ]
-  },
-  "终点地图移动": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
-        "template": "END_swipe_X.png",
-        "roi": [
-          1137,
-          2,
-          143,
-          132
-        ]
-      }
-    },
-    "action": {
-      "type": "Swipe",
-      "param": {
-        "begin": [
-          480,
-          530
-        ],
-        "end": [
-          [
-            1100,
-            100
-          ]
-        ]
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 328,
-        "y": 74
-      }
-    },
-    "next": [
-      "[JumpBack]终点地图点击"
-    ]
-  },
-  "终点地图点击": {
-    "post_wait_freezes": 500,
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
-        "template": [
-          "END_door.png"
-        ],
-        "roi": [
-          419,
-          456,
-          177,
-          137
-        ]
-      }
-    },
-    "action": {
-      "type": "LongPress",
-      "param": {
-        "target_offset": [
-          50,
-          0,
-          0,
-          0
-        ],
-        "duration": 100
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 621,
-        "y": 83
-      }
-    },
-    "next": [
-      "[JumpBack]终点地图OK"
     ]
   },
   "终点地图OK": {
@@ -283,103 +271,88 @@
     },
     "$__mpe_code": {
       "position": {
-        "x": 902,
-        "y": 81
+        "x": 1939,
+        "y": 47
       }
     },
     "next": [
       "[JumpBack]终点完成校验"
     ]
   },
-  "掉线": {
-    "focus": {
-      "Node.Action.Succeeded": "扑街！！！"
-    },
-    "recognition": {
-      "type": "OCR",
-      "param": {
-        "expected": [
-          "D36"
-        ],
-        "roi": [
-          672,
-          340,
-          66,
-          45
-        ]
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 82,
-        "y": 602
-      }
-    },
-    "next": [
-      "掉线OK"
-    ]
-  },
-  "掉线OK": {
-    "recognition": {
-      "type": "OCR",
-      "param": {
-        "expected": [
-          "OK"
-        ],
-        "roi": [
-          582,
-          520,
-          114,
-          59
-        ]
-      }
-    },
-    "action": {
-      "type": "LongPress",
-      "param": {
-        "duration": 100
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1078,
-        "y": 528
-      }
-    },
-    "next": [
-      "掉线猛击"
-    ]
-  },
-  "跳过": {
-    "focus": {
-      "Node.Action.Succeeded": "skip剧情"
-    },
+  "终点地图点击": {
+    "post_wait_freezes": 500,
     "recognition": {
       "type": "TemplateMatch",
       "param": {
-        "template": "HBR_skip.png",
         "roi": [
-          1103,
-          39,
-          57,
-          60
+          419,
+          456,
+          177,
+          137
+        ],
+        "template": [
+          "END_door.png"
         ]
       }
     },
     "action": {
       "type": "LongPress",
       "param": {
-        "duration": 100
+        "duration": 100,
+        "target_offset": [
+          50,
+          0,
+          0,
+          0
+        ]
       }
     },
     "$__mpe_code": {
       "position": {
-        "x": 86,
-        "y": 858
+        "x": 1658,
+        "y": 49
       }
     },
     "next": [
-      "计时器"
+      "[JumpBack]终点地图OK"
+    ]
+  },
+  "终点地图移动": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          1137,
+          2,
+          143,
+          132
+        ],
+        "template": "END_swipe_X.png"
+      }
+    },
+    "action": {
+      "type": "Swipe",
+      "param": {
+        "begin": [
+          480,
+          530
+        ],
+        "end": [
+          [
+            1100,
+            100
+          ]
+        ]
+      }
+    },
+    "$__mpe_code": {
+      "position": {
+        "x": 1365,
+        "y": 40
+      }
+    },
+    "next": [
+      "[JumpBack]终点地图点击"
     ]
   },
   "终点完成校验": {
@@ -403,82 +376,12 @@
     },
     "$__mpe_code": {
       "position": {
-        "x": 1191,
-        "y": 83
+        "x": 2228,
+        "y": 49
       }
     },
     "next": [
       "计时器"
-    ]
-  },
-  "掉线猛击": {
-    "action": {
-      "type": "Click",
-      "param": {
-        "target": [
-          582,
-          520,
-          114,
-          59
-        ]
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1365,
-        "y": 546
-      }
-    },
-    "next": [
-      "掉线403",
-      "掉线结束",
-      "掉线重载计时器"
-    ]
-  },
-  "掉线403停止": {
-    "action": {
-      "type": "StopTask",
-      "param": {}
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1994,
-        "y": 493
-      }
-    }
-  },
-  "掉线结束": {
-    "recognition": {
-      "type": "OCR",
-      "param": {
-        "expected": [
-          "AUTO OFF"
-        ],
-        "roi": [
-          1043,
-          210,
-          127,
-          49
-        ]
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1700,
-        "y": 671
-      }
-    }
-  },
-  "掉线重载计时器": {
-    "post_delay": 5000,
-    "$__mpe_code": {
-      "position": {
-        "x": 1700,
-        "y": 877
-      }
-    },
-    "next": [
-      "掉线猛击"
     ]
   },
   "计时器": {
@@ -493,16 +396,70 @@
       "开始"
     ]
   },
-  "$__mpe_sticker_便签_HBR_skill_4-2": {
+  "起点": {
+    "focus": {
+      "Node.Action.Succeeded": "O神，启动！"
+    },
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "AUTO OFF"
+        ],
+        "roi": [
+          1043,
+          210,
+          127,
+          49
+        ]
+      }
+    },
+    "action": {
+      "type": "LongPress",
+      "param": {
+        "duration": 100
+      }
+    },
     "$__mpe_code": {
       "position": {
-        "x": 312,
-        "y": 701
-      },
-      "content": "掉线D16多种tips",
-      "color": "yellow",
-      "width": 200,
-      "height": 160
-    }
+        "x": 671,
+        "y": -40
+      }
+    },
+    "next": [
+      "计时器"
+    ]
+  },
+  "跳过": {
+    "focus": {
+      "Node.Action.Succeeded": "skip剧情"
+    },
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          1103,
+          39,
+          57,
+          60
+        ],
+        "template": "HBR_skip.png"
+      }
+    },
+    "action": {
+      "type": "LongPress",
+      "param": {
+        "duration": 100
+      }
+    },
+    "$__mpe_code": {
+      "position": {
+        "x": 671,
+        "y": 768
+      }
+    },
+    "next": [
+      "计时器"
+    ]
   }
 }

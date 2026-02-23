@@ -1,34 +1,35 @@
 {
-    "$__mpe_config_新建Pipeline1": {
-        "$__mpe_code": {
-            "prefix": "",
-            "savedViewport": {
-                "x": -662,
-                "y": 9,
-                "zoom": 1
-            },
-            "filename": "新建Pipeline1",
-            "version": "v1.1.3"
-        }
+    "Auto": {
+        "recognition": "OCR",
+        "action": "Click",
+        "roi": [
+            166,
+            0,
+            476,
+            80
+        ],
+        "expected": "AUTO OFF",
+        "replace": [
+            "AUTOOFF",
+            "AUTO OFF"
+        ],
+        "next": [
+            "IsAutoOn",
+            "[JumpBack]Auto"
+        ]
     },
-    "end": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "取消"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {}
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 907,
-                "y": 298
-            }
-        }
+    "IsAutoOn": {
+        "recognition": "OCR",
+        "roi": [
+            166,
+            0,
+            476,
+            80
+        ],
+        "expected": "AUTO ON",
+        "replace": [
+            "AUTOON",
+            "AUTO ON"
+        ]
     }
 }
