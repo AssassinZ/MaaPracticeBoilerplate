@@ -1,25 +1,5 @@
 {
-  "$__mpe_config_HBR_skill_4-2": {
-    "$__mpe_code": {
-      "prefix": "",
-      "filePath": "C:\\Users\\zz298\\Documents\\MaaPipeline\\HBR_skill_4-2.json",
-      "lastSyncTime": 1771832633885,
-      "savedViewport": {
-        "x": -1051,
-        "y": -550,
-        "zoom": 1.32
-      },
-      "filename": "HBR_skill_4-2",
-      "version": "v1.1.4"
-    }
-  },
   "开始": {
-    "$__mpe_code": {
-      "position": {
-        "x": 287,
-        "y": 289
-      }
-    },
     "next": [
       "起点",
       "[JumpBack]终点",
@@ -45,12 +25,6 @@
           66,
           45
         ]
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 667,
-        "y": 512
       }
     },
     "next": [
@@ -84,12 +58,6 @@
     "action": {
       "type": "StopTask",
       "param": {}
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1621,
-        "y": 427
-      }
     }
   },
   "掉线OK": {
@@ -113,12 +81,6 @@
         "duration": 100
       }
     },
-    "$__mpe_code": {
-      "position": {
-        "x": 1001,
-        "y": 618
-      }
-    },
     "next": [
       "掉线重载计时器"
     ]
@@ -136,12 +98,6 @@
           114,
           59
         ]
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1616,
-        "y": 904
       }
     },
     "next": [
@@ -165,22 +121,10 @@
           49
         ]
       }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1622,
-        "y": 651
-      }
     }
   },
   "掉线重载计时器": {
     "post_delay": 5000,
-    "$__mpe_code": {
-      "position": {
-        "x": 1309,
-        "y": 653
-      }
-    },
     "next": [
       "掉线403",
       "掉线结束",
@@ -212,12 +156,6 @@
         "duration": 100
       }
     },
-    "$__mpe_code": {
-      "position": {
-        "x": 669,
-        "y": 223
-      }
-    },
     "next": [
       "终点出现地图"
     ]
@@ -240,12 +178,6 @@
       "type": "Click",
       "param": {}
     },
-    "$__mpe_code": {
-      "position": {
-        "x": 1078,
-        "y": 58
-      }
-    },
     "next": [
       "[JumpBack]终点地图移动"
     ]
@@ -267,12 +199,6 @@
       "type": "LongPress",
       "param": {
         "duration": 100
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 1939,
-        "y": 47
       }
     },
     "next": [
@@ -307,12 +233,6 @@
         ]
       }
     },
-    "$__mpe_code": {
-      "position": {
-        "x": 1658,
-        "y": 49
-      }
-    },
     "next": [
       "[JumpBack]终点地图OK"
     ]
@@ -345,12 +265,6 @@
         ]
       }
     },
-    "$__mpe_code": {
-      "position": {
-        "x": 1365,
-        "y": 40
-      }
-    },
     "next": [
       "[JumpBack]终点地图点击"
     ]
@@ -374,24 +288,12 @@
         ]
       }
     },
-    "$__mpe_code": {
-      "position": {
-        "x": 2228,
-        "y": 49
-      }
-    },
     "next": [
       "计时器"
     ]
   },
   "计时器": {
     "post_delay": 10000,
-    "$__mpe_code": {
-      "position": {
-        "x": 278,
-        "y": 475
-      }
-    },
     "next": [
       "开始"
     ]
@@ -420,12 +322,6 @@
         "duration": 100
       }
     },
-    "$__mpe_code": {
-      "position": {
-        "x": 671,
-        "y": -40
-      }
-    },
     "next": [
       "计时器"
     ]
@@ -450,12 +346,6 @@
       "type": "LongPress",
       "param": {
         "duration": 100
-      }
-    },
-    "$__mpe_code": {
-      "position": {
-        "x": 671,
-        "y": 768
       }
     },
     "next": [
